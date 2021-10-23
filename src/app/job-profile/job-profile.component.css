@@ -1,0 +1,49 @@
+.row {
+  margin-top: 30%;
+  float: left;
+}
+
+.columnleft{
+  float: left;
+  width: 250%;
+  height: 50%;
+  margin-right: 575px;
+
+}
+
+.columnright {
+  float: right;
+  width: 250%;
+  height: 50%;
+  
+
+}
+
+.job-profile {
+  max-width: 350px;
+  margin: 50px;
+  font-family: monospace;
+  background-color: rgb(203, 246, 253);
+  }
+  
+  .job-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .test-input {
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+  }
+
+  .display2 {
+    max-width: 350px;
+    margin: 50px auto 0 auto;
+    position: relative;
+    
+  }
+
+
+  /* .values {
+    line-height: 50px;
+  } */

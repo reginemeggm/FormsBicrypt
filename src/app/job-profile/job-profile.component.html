@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="col">
+    <div class="columnleft">
+        <mat-card class="job-profile">
+          <mat-card-title>Job Profile</mat-card-title>
+          <mat-card-content>
+            <form class="job-form data-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+              <mat-error *ngIf="empNumber.errors?.required">
+                Employee number is required
+              </mat-error>
+
+              <mat-error *ngIf="empNumber.errors?.minlength">
+                Employee number should be at least 6 characters
+              </mat-error>
+  
+              <mat-form-field appearance="outline">
+                <input matInput 
+                type="text" 
+                formControlName="empNumber"
+                name="empNumber" 
+                placeholder="Employee Number" />
+              </mat-form-field>
+
+              <mat-error *ngIf="jobTitle.errors?.required">
+                Job title is required
+              </mat-error>
+
+              <mat-error *ngIf="jobTitle.errors?.minlength">
+                Job title should be at least 6 characters
+              </mat-error>
+  
+              <mat-form-field appearance="outline">
+                <input matInput 
+                type="text" 
+                formControlName="jobTitle"
+                name="jobTitle" 
+                placeholder="Job Title" />
+              </mat-form-field>
+    
+             
+
+            <mat-error *ngIf="employer.errors?.required">
+                Employer is required
+              </mat-error>
+
+              <mat-error *ngIf="employer.errors?.minlength">
+                Employer should be at least 6 characters
+              </mat-error>
+              
+              <mat-form-field appearance="outline">
+                <input matInput 
+                type="text" 
+                formControlName="employer"
+                name="employer" 
+                placeholder="Employer" />
+              </mat-form-field>
+  
+            
+              <mat-error *ngIf="headqtrs.errors?.required">
+               Headquarters is required
+              </mat-error>
+
+              <mat-error *ngIf="headqtrs.errors?.minlength">
+                Headquarters should be at least 6 characters
+              </mat-error>
+      
+              <mat-form-field appearance="outline">
+                  <input matInput 
+                  type="text" 
+                  formControlName="headqtrs"
+                  name="headqtrs" 
+                  placeholder="Headquarters" />
+                </mat-form-field>
+      
+              
+                <mat-error *ngIf="registrationNumber.errors?.required">
+                  Registration number is required
+                </mat-error>
+
+                <mat-error *ngIf="registrationNumber.errors?.minlength">
+                  Registration number should be at least 6 characters
+                </mat-error>
+      
+                <mat-form-field appearance="outline">
+                  <input matInput 
+                  type="text"
+                  formControlName="registrationNumber"
+                  name="registrationNumber" 
+                  placeholder="Registration Number" />
+                </mat-form-field>
+              <button mat-raised-button color="warn" [disabled]="!form.valid" (click)="toggleDisplay2()">Submit</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </div>    
+    </div>
+
+    <div class="col">
+    <div class="columnright">
+        <div *ngIf="isDisplay2" class="display2">
+          <mat-card class="display" style="background-color: rgb(158, 218, 228);">
+            <mat-card-title style="font-family: 'Courier New', Courier, monospace;">
+              Job Profile 
+              <div class="values">
+                <mat-card-content>
+                  <br>
+                  <mat-card-subtitle>
+                   Employer
+                  </mat-card-subtitle>
+                  {{ employer.value }}
+                  <br><br>
+                  <mat-card-subtitle>
+                    Headquarters
+                  </mat-card-subtitle>
+                  {{ headqtrs.value }}
+                  <br><br>
+                  <mat-card-subtitle>
+                    Registration Number
+                  </mat-card-subtitle>
+                  {{ registrationNumber.value }}
+                  <br><br>
+                  <mat-card-subtitle>
+                    Job Title
+                  </mat-card-subtitle>
+                  {{ jobTitle.value }}
+                  <br><br>
+                  <mat-card-subtitle>
+                    Employee Number
+                  </mat-card-subtitle>
+                  {{ empNumber.value }}
+                  <span matSuffix>.00</span>
+                  <br><br>
+                  
+                </mat-card-content>
+              </div>
+            </mat-card-title>
+          </mat-card>
+        </div>
+  </div>
+</div>
+ 
+  
